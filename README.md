@@ -44,8 +44,30 @@ Caveat: No person wrote or reviewed the scripts; the hosts can simplify, misstat
 
 The language model and the voices took turns on the 6 GB GPU; book2podcast unloads one before the other runs.
 
+## Free and open-source tools
+
+Every tool and model used is free and open source (the models are open-weight), apart from NVIDIA's GPU driver libraries noted below.
+
+| Tool or model | Used for | License |
+|---|---|---|
+| [book2podcast](https://github.com/ardyln/book2podcast) | running the whole process | GPL-3.0 |
+| [Docling](https://github.com/docling-project/docling) | reading the PDF | MIT |
+| [RapidOCR](https://github.com/RapidAI/RapidOCR) | OCR inside Docling | Apache-2.0 |
+| [PyTorch](https://github.com/pytorch/pytorch) | running Docling's models on the GPU | BSD-3-Clause |
+| [Open Notebook](https://github.com/lfnovo/open-notebook) | outline, script and audio pipeline | MIT |
+| [Ollama](https://github.com/ollama/ollama) | running the language models | MIT |
+| [Gemma 4](https://huggingface.co/google/gemma-4-E4B-it) (E4B and 12B, community "abliterated" variants) | writing the scripts and this README | Apache-2.0 (open weights) |
+| [Speaches](https://github.com/speaches-ai/speaches) | serving the voices | MIT |
+| [Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-82M) | the voices | Apache-2.0 (open weights) |
+| [pi](https://github.com/earendil-works/pi-mono) | running the model that wrote this README | MIT |
+| Ubuntu 26.10, Linux 7.3 | operating system | mostly GPL-2.0 and other free licenses |
+
+The one exception is the NVIDIA driver. Its kernel module is open source (MIT/GPL-2.0), but the user-space libraries that CUDA runs on are under NVIDIA's proprietary license. They are free to use, but not open source.
+
+"Open weights" means the trained model files are published under the license; the data they were trained on is not.
+
 ## About this README
-This README was also written by a local language model, gemma4-abliterated-12b-64k (Gemma 4 12B variant) run through the pi agent on the same laptop, from a list of facts, with the title, intro and download link fixed by hand.
+This README was also written by a local language model, gemma4-abliterated-12b-64k (Gemma 4 12B variant) run through the pi agent on the same laptop, from a list of facts, with the title, intro and download link fixed by hand and the section on free and open-source tools added by hand.
 
 ## Attribution and license
 The episodes are based on "Mathematics of Linguistic Reality" by Cem Bozşahin, © 2026, CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Each chapter was turned into an AI-generated spoken conversation that summarises, paraphrases and discusses it; not the book's text. Neither the author nor the publisher made or endorses the episodes. Anyone may share and adapt the episodes, also commercially, if they credit the book (title, author, license) and this adaptation, and say whether they changed them.
